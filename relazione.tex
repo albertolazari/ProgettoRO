@@ -1,0 +1,37 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {immagini/} }
+
+\usepackage{titling}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\pretitle{%
+  \begin{center}
+  \LARGE
+  \includegraphics[width=6cm]{logo-unipd}\\[\bigskipamount]
+}
+\posttitle{\end{center}}
+
+\title{\textbf{Università di Padova \\ Relazione del progetto di Ricerca Operativa}}
+\author{Alberto Lazari}
+\date{Giugno 2022 - A.A. 2021-2022}
+
+\begin{document}
+	\maketitle
+	\pagebreak
+
+	\tableofcontents
+	\pagebreak
+
+	\section{Introduzione}
+	\input{introduzione.tex}
+\end{document}
