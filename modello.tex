@@ -59,24 +59,24 @@
 \subsection{Funzione obiettivo}
 La funzione obiettivo del modello può essere espressa in una forma generale come segue:
 \begin{align*}
-	\textrm{max} \quad & Guadagno\ corsi\ boulder + Guadagno\ corsi\ lead + Guadagno\ corso\ agonisti \\
-	& + Guadagno\ corso\ outdoor - Costi\ istruttori
+	\textrm{max} \quad & \textbf{Guadagno\ corsi\ boulder} + \textbf{Guadagno\ corsi\ lead} + \textbf{Guadagno\ corso\ agonisti} \\
+	& + \textbf{Guadagno\ corso\ outdoor} - \textbf{Costi\ istruttori}
 \end{align*}
 dove i termini sono i seguenti:
 \begin{flalign*}
-	& Guadagno\ corsi\ boulder = \sum_{g \in G, o \in O} b_{g,o} \cdot guadagnoCorsoBoulder && \\
-	& Guadagno\ corsi\ lead = \sum_{g \in G, o \in O} l_{g,o} \cdot guadagnoCorsoLead && \\
-	& Guadagno\ corso\ agonisti = \sum_{g \in G} a_g \cdot guadagnoCorsoAgonisti && \\
-	& Guadagno\ corso\ outdoor = k \cdot guadagnoCorsoOutdoor &&
+	& \textbf{Guadagno\ corsi\ boulder} = \sum_{g \in G, o \in O} b_{g,o} \cdot guadagnoCorsoBoulder && \\
+	& \textbf{Guadagno\ corsi\ lead} = \sum_{g \in G, o \in O} l_{g,o} \cdot guadagnoCorsoLead && \\
+	& \textbf{Guadagno\ corso\ agonisti} = \sum_{g \in G} a_g \cdot guadagnoCorsoAgonisti && \\
+	& \textbf{Guadagno\ corso\ outdoor} = k \cdot guadagnoCorsoOutdoor &&
 \end{flalign*}
 \begin{flalign*}
-	Costi\ istruttori = & \ costoIstruttore \cdot ( Ore\ corsi\ individuali + Ore\ corso\ agonisti && \\
-	& + Ore\ corso\ outdoor ) &&
+	\textbf{Costi\ istruttori} = & \ costoIstruttore \cdot ( \textbf{Ore\ corsi\ individuali} + \textbf{Ore\ corso\ agonisti} && \\
+	& + \textbf{Ore\ corso\ outdoor} ) &&
 \end{flalign*}
 \begin{align*}
-	& Ore\ corsi\ individuali = \sum_{i \in I, g \in G, o \in O} s_{i,g,o} + t_{i,g,o} && \\
-	& Ore\ corso\ agonisti = \sum_{i \in I, g \in G} 2 u_{i,g} && \\
-	& Ore\ corso\ outdoor = \sum_{i \in I} o_i \cdot durataCorsoOutdoor &&
+	& \textbf{Ore\ corsi\ individuali} = \sum_{i \in I, g \in G, o \in O} s_{i,g,o} + t_{i,g,o} && \\
+	& \textbf{Ore\ corso\ agonisti} = \sum_{i \in I, g \in G} 2 u_{i,g} && \\
+	& \textbf{Ore\ corso\ outdoor} = \sum_{i \in I} o_i \cdot durataCorsoOutdoor &&
 \end{align*}
 \pagebreak
 
