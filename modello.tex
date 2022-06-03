@@ -57,46 +57,4 @@
 \end{itemize}
 
 \subsection{Funzione obiettivo}
-La funzione obiettivo del modello può essere espressa in una forma generale come segue:
-\begin{align*}
-	\textrm{max} \quad & \textbf{Guadagno\ corsi\ boulder} + \textbf{Guadagno\ corsi\ lead} + \textbf{Guadagno\ corso\ agonisti} \\
-	& + \textbf{Guadagno\ corso\ outdoor} - \textbf{Costi\ istruttori}
-\end{align*}
-dove i termini sono i seguenti:
-\begin{flalign*}
-	& \textbf{Guadagno\ corsi\ boulder} = \sum_{g \in G, o \in O} b_{g,o} \cdot guadagnoCorsoBoulder && \\
-	& \textbf{Guadagno\ corsi\ lead} = \sum_{g \in G, o \in O} l_{g,o} \cdot guadagnoCorsoLead && \\
-	& \textbf{Guadagno\ corso\ agonisti} = \sum_{g \in G} a_g \cdot guadagnoCorsoAgonisti && \\
-	& \textbf{Guadagno\ corso\ outdoor} = k \cdot guadagnoCorsoOutdoor &&
-\end{flalign*}
-\begin{flalign*}
-	\textbf{Costi\ istruttori} = & \ costoIstruttore \cdot ( \textbf{Ore\ corsi\ individuali} + \textbf{Ore\ corso\ agonisti} && \\
-	& + \textbf{Ore\ corso\ outdoor} ) &&
-\end{flalign*}
-\begin{align*}
-	& \textbf{Ore\ corsi\ individuali} = \sum_{i \in I, g \in G, o \in O} s_{i,g,o} + t_{i,g,o} && \\
-	& \textbf{Ore\ corso\ agonisti} = \sum_{i \in I, g \in G} 2 u_{i,g} && \\
-	& \textbf{Ore\ corso\ outdoor} = \sum_{i \in I} o_i \cdot durataCorsoOutdoor &&
-\end{align*}
-\pagebreak
-
-\textbf{s.t.}
-\begin{flalign*}
-	% Corso deve avere istruttore
-	& \sum_{i \in I} s_{i,g,o} \cdot M \geq b_{g,o} & \forall g \in G, \forall o \in O & \\
-	& \sum_{i \in I} t_{i,g,o} \cdot M \geq l_{g,o} & \forall g \in G, \forall o \in O & \\
-	& \sum_{i \in I} u_{i,g} \geq a_{g} & \forall g \in G & \\
-	% Max cosrsi per istruttore
-	& b_{g,o} - \sum_{j \in I - i} s_{j,g,o} \cdot maxCorsiIstruttore \leq maxCorsiIstruttore & \forall i \in I, \forall g \in G, \forall o \in O & \\
-	& l_{g,o} - \sum_{j \in I - i} t_{j,g,o} \cdot maxCorsiIstruttore \leq maxCorsiIstruttore & \forall i \in I, \forall g \in G, \forall o \in O & \\
-	% Istruttore non può tenere boulder e lead
-	& s_{i,g,o} + t_{i,g,o} \leq 1 & \forall i \in I, \forall g \in G, \forall o \in O &
-\end{flalign*}
-\begin{flalign*}
-	% Max ore per istruttore
-	& ( \sum_{g \in G, o \in O} s_{i,g,o} + t_{i,g,o} ) + ( \sum_{g \in G} 2 u_{i,g} ) + o_i \cdot durataCorsoOutdoor \leq maxOre & \forall i \in I &
-\end{flalign*}
-\begin{flalign*}
-	% Istruttore segue solo corso agonisti
-	& s_{i,g,o} + t_{i,g,o} \leq ( 1 - u_{i,g} ) \cdot M & \forall i \in I, \forall g \in G, \forall o \in O &
-\end{flalign*}
+\input{funzione-obiettivo.tex}
