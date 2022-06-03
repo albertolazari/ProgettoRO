@@ -2,13 +2,14 @@
 Una palestra di arrampicata organizza dei corsi di allenamento. L'obiettivo è massimizzare il guadagno ricavato dai corsi e minimizzare i costi degli istruttori.
 
 \subsection{Problema generale}
-Durante ogni giorno di apertura, all'interno della settimana, la palestra ha un determinato numero di corsi da svolgere a un certo orario. La divisione settimanale dei corsi è sempre la stessa ogni settimana. Per poter essere svolto, ogni corso necessita di un istruttore che sia presente in palestra. Un istruttore può seguire un numero massimo di corsi contemporaneamente. È presente anche un corso per gli agonisti della durata di 2 ore, che deve essere seguito da un solo istruttore che si occupi solamente di loro durante lo svolgimento del corso. La domenica si possono organizzare corsi outdoor su roccia, che devono essere seguiti dallo stesso istruttore per tutto il tempo. \\
+Durante ogni giorno di apertura, all'interno della settimana, la palestra ha un determinato numero di corsi individuali da svolgere a un certo orario. È attrezzata per svolgere corsi di boulder e di lead. La divisione settimanale dei corsi è sempre la stessa ogni settimana. Per poter essere svolto, ogni corso necessita di un istruttore che lo segua. Un istruttore può seguire un numero massimo di corsi contemporaneamente, tutti di boulder oppure di lead. È presente anche un corso per gli agonisti, che si distingue dai corsi individuali, della durata di 2 ore. Questo deve essere seguito da un solo istruttore che si occupi solamente di loro durante lo svolgimento del corso. La domenica si possono organizzare corsi outdoor su roccia, che devono essere seguiti dallo stesso istruttore per tutto il tempo. \\
 Si vuole massimizzare il guadagno derivato dai corsi, sapendo che:
 \begin{itemize}
 	\item un istruttore ha un certo costo orario;
 	\item gli istruttori hanno un numero massimo di ore settimanali che possono mettere a disposizione;
-	\item lo svolgimento di un corso porta un certo guadagno;
-	\item il corso degli agonisti si tiene più giorni alla settimana, in una certa fascia oraria;
+	\item lo svolgimento di un corso di boulder porta un determinato guadagno;
+	\item lo svolgimento di un corso di lead porta un guadagno differente;
+	\item il corso degli agonisti si tiene regolarmente, più giorni alla settimana, in una certa fascia oraria;
 	\item il corso degli agonisti porta un certo guadagno orario;
 	\item il corso outdoor ha un determinato numero di ore;
 	\item il corso outdoor, se svolto, porta un certo guadagno.
