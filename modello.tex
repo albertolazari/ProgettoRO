@@ -3,15 +3,20 @@
 	\item $G$: giorni di apertura della palestra
 	\item $O$: orari dei corsi
 	\item $I$: istruttori della palestra
-	\item $T$: tipologie dei corsi
 \end{itemize}
 
 \subsection{Variabili decisionali}
 \begin{itemize}
-	\item $c_{t,g,o}$ : corsi del tipo $t \in T$ svolti nel giorno $g \in G$ nell'orario $o \in O$
-	\item $s_{i,t,g,o} =
+	\item $b_{g,o}$ : corsi individuali di boulder svolti nel giorno $g \in G$ nell'orario $o \in O$
+	\item $l_{g,o}$ : corsi individuali di lead svolti nel giorno $g \in G$ nell'orario $o \in O$
+	\item $s_{i,g,o} =
 		\begin{cases}
-			1 & $se l'istruttore $i \in I$ segue un corso del tipo $t \in T$ il giorno $g \in G \\ & $nell'orario $o \in O$$ \\
+			1 & $se l'istruttore $i \in I$ segue dei corsi di boulder il giorno $g \in G \\ & $nell'orario $o \in O$$ \\
+			0 & $altrimenti$
+		\end{cases}$
+	\item $t_{i,g,o} =
+		\begin{cases}
+			1 & $se l'istruttore $i \in I$ segue dei corsi di lead il giorno $g \in G \\ & $nell'orario $o \in O$$ \\
 			0 & $altrimenti$
 		\end{cases}$
 	\item $a_{i,g} =
@@ -29,4 +34,34 @@
 			1 & $se l'istruttore $i \in I$ segue il corso outdoor$ \\
 			0 & $altrimenti$
 		\end{cases}$
+\end{itemize}
+
+\subsection{Parametri}
+\begin{itemize}
+	\item $maxCorsiBoulderPerIstruttore$: massimo numero di corsi individuali di boulder che un istruttore può seguire contemporaneamente
+	\item $maxCorsiLeadPerIstruttore$: massimo numero di corsi individuali di lead che un istruttore può seguire contemporaneamente
+	\item $costoIstruttore$: costo orario di un istruttore
+	\item $maxOre_i$: massimo numero di ore di lavoro per l'istruttore $i \in I$
+	\item $guadagnoCorsoBoulder$: guadagno ricavato dallo svolgimento di un corso di boulder
+	\item $guadagnoCorsoLead$: guadagno ricavato dallo svolgimento di un corso di lead
+	\item $corsoAgonisti_g =
+		\begin{cases}
+			1 & $se nel giorno $g \in G$ si tiene il corso agonisti$ \\
+			0 & $altrimenti$
+		\end{cases}$
+	\item $orarioCorsoAgonisti$: orario $\in O$ di inizio\footnote{Essendo la durata del corso agonisti di 2 ore l'orario di fine è $orarioCorsoAgonisti + 2$} del corso agonisti
+	\item $guadagnoCorsoAgonisti$: guadagno ricavato dallo svolgimento delle 2 ore di un corso agonisti in una giornata
+	\item $durataCorsoOutdoor$: numero di ore di durata del corso outdoor
+	\item $guadagnoCorsoOutdoor$: guadagno ricavato dallo svolgimento del corso outdoor
+\end{itemize}
+
+\subsection{Funzione obiettivo}
+La funzione obiettivo del modello può essere espressa in una forma generale come segue:
+\begin{align*}
+	\textrm{max} \quad & Guadagno\ corsi\ boulder + Guadagno\ corsi\ lead + Guadagno\ corso\ agonisti \\
+	& + Guadagno\ corso\ outdoor - Costi\ istruttori
+\end{align*}
+dove i termini sono i seguenti:
+\begin{itemize}
+	\item 
 \end{itemize}
