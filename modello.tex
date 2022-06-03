@@ -19,7 +19,12 @@
 			1 & $se l'istruttore $i \in I$ segue dei corsi di lead il giorno $g \in G \\ & $nell'orario $o \in O$$ \\
 			0 & $altrimenti$
 		\end{cases}$
-	\item $a_{i,g} =
+	\item $a_g =
+		\begin{cases}
+			1 & $se nel giorno $g \in G$ si tiene il corso agonisti$ \\
+			0 & $altrimenti$
+		\end{cases}$
+	\item $u_{i,g} =
 		\begin{cases}
 			1 & $se l'istruttore $i \in I$ segue il corso degli agonisti il giorno $g \in G$$ \\
 			0 & $altrimenti$
@@ -44,12 +49,8 @@
 	\item $maxOre_i$: massimo numero di ore di lavoro per l'istruttore $i \in I$
 	\item $guadagnoCorsoBoulder$: guadagno ricavato dallo svolgimento di un corso di boulder
 	\item $guadagnoCorsoLead$: guadagno ricavato dallo svolgimento di un corso di lead
-	\item $corsoAgonisti_g =
-		\begin{cases}
-			1 & $se nel giorno $g \in G$ si tiene il corso agonisti$ \\
-			0 & $altrimenti$
-		\end{cases}$
-	\item $orarioCorsoAgonisti$: orario $\in O$ di inizio\footnote{Essendo la durata del corso agonisti di 2 ore l'orario di fine è $orarioCorsoAgonisti + 2$} del corso agonisti
+	\item $minAllenamentiAgonisti$: minimo numero di giorni in cui si tiene il corso agonisti
+	\item $orarioCorsoAgonisti$: orario $\in O$ di inizio\footnote{Essendo la durata del corso agonisti di 2 ore, l'orario di fine è $orarioCorsoAgonisti + 2$} del corso agonisti
 	\item $guadagnoCorsoAgonisti$: guadagno ricavato dallo svolgimento delle 2 ore di un corso agonisti in una giornata
 	\item $durataCorsoOutdoor$: numero di ore di durata del corso outdoor
 	\item $guadagnoCorsoOutdoor$: guadagno ricavato dallo svolgimento del corso outdoor
@@ -62,6 +63,22 @@ La funzione obiettivo del modello può essere espressa in una forma generale com
 	& + Guadagno\ corso\ outdoor - Costi\ istruttori
 \end{align*}
 dove i termini sono i seguenti:
-\begin{itemize}
-	\item 
-\end{itemize}
+\begin{flalign*}
+	& Guadagno\ corsi\ boulder = \sum_{g \in G, o \in O} b_{g,o} \cdot guadagnoCorsoBoulder && \\
+	& Guadagno\ corsi\ lead = \sum_{g \in G, o \in O} l_{g,o} \cdot guadagnoCorsoLead && \\
+	& Guadagno\ corso\ agonisti = \sum_{g \in G} a_g \cdot guadagnoCorsoAgonisti && \\
+	& Guadagno\ corso\ outdoor = k \cdot guadagnoCorsoOutdoor &&
+\end{flalign*}
+\begin{flalign*}
+	Costi\ istruttori = & \ costoIstruttore \cdot ( Ore\ corsi\ individuali + Ore\ corso\ agonisti && \\
+	& + Ore\ corso\ outdoor ) &&
+\end{flalign*}
+\begin{align*}
+	& Ore\ corsi\ individuali = \sum_{i \in I, g \in G, o \in O} s_{i,g,o} + t_{i,g,o} && \\
+	& Ore\ corso\ agonisti = \sum_{i \in I, g \in G} 2 u_{i,g} && \\
+	& Ore\ corso\ outdoor = \sum_{i \in I} o_i \cdot durataCorsoOutdoor &&
+\end{align*}
+\pagebreak
+
+\textbf{s.t.}
+
