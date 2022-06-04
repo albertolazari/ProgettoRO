@@ -5,6 +5,21 @@
 	\item $I$: istruttori della palestra
 \end{itemize}
 
+\subsection{Parametri}
+\begin{itemize}
+	\item $maxCorsiIstruttore$: massimo numero di corsi individuali, di boulder o lead, che un istruttore può seguire contemporaneamente
+	\item $costoIstruttore$: costo orario di un istruttore
+	\item $maxOre_i$: massimo numero di ore di lavoro per l'istruttore $i \in I$
+	\item $guadagnoCorsoBoulder$: guadagno ricavato dallo svolgimento di un corso di boulder
+	\item $guadagnoCorsoLead$: guadagno ricavato dallo svolgimento di un corso di lead
+	\item $minAllenamentiAgonisti$: minimo numero di giorni in cui si tiene il corso agonisti
+	\item $orarioCorsoAgonisti$: orario $\in O$ di inizio\footnote{Essendo la durata del corso agonisti di 2 ore, l'orario di fine è $orarioCorsoAgonisti + 2$} del corso agonisti
+	\item $guadagnoCorsoAgonisti$: guadagno ricavato dallo svolgimento delle 2 ore di un corso agonisti in una giornata
+	\item $durataCorsoOutdoor$: numero di ore di durata del corso outdoor
+	\item $guadagnoCorsoOutdoor$: guadagno ricavato dallo svolgimento del corso outdoor
+	\item $M$: costante sufficientemente grande
+\end{itemize}
+
 \subsection{Variabili decisionali}
 \begin{itemize}
 	\item $b_{g,o}$ : corsi individuali di boulder svolti nel giorno $g \in G$ nell'orario $o \in O$
@@ -39,21 +54,6 @@
 			1 & $se l'istruttore $i \in I$ segue il corso outdoor$ \\
 			0 & $altrimenti$
 		\end{cases}$
-\end{itemize}
-
-\subsection{Parametri}
-\begin{itemize}
-	\item $maxCorsiIstruttore$: massimo numero di corsi individuali, di boulder o lead, che un istruttore può seguire contemporaneamente
-	\item $costoIstruttore$: costo orario di un istruttore
-	\item $maxOre_i$: massimo numero di ore di lavoro per l'istruttore $i \in I$
-	\item $guadagnoCorsoBoulder$: guadagno ricavato dallo svolgimento di un corso di boulder
-	\item $guadagnoCorsoLead$: guadagno ricavato dallo svolgimento di un corso di lead
-	\item $minAllenamentiAgonisti$: minimo numero di giorni in cui si tiene il corso agonisti
-	\item $orarioCorsoAgonisti$: orario $\in O$ di inizio\footnote{Essendo la durata del corso agonisti di 2 ore, l'orario di fine è $orarioCorsoAgonisti + 2$} del corso agonisti
-	\item $guadagnoCorsoAgonisti$: guadagno ricavato dallo svolgimento delle 2 ore di un corso agonisti in una giornata
-	\item $durataCorsoOutdoor$: numero di ore di durata del corso outdoor
-	\item $guadagnoCorsoOutdoor$: guadagno ricavato dallo svolgimento del corso outdoor
-	\item $M$: costante sufficientemente grande
 \end{itemize}
 
 \subsection{Funzione obiettivo}
