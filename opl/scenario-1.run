@@ -1,0 +1,5 @@
+reset;
+model progetto.mod;
+data scenario-1.dat;
+option solver cplex;
+solve;

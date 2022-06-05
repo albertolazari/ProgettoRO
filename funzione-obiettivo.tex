@@ -17,7 +17,7 @@ dove i termini sono i seguenti:
 \begin{align*}
 	& \textbf{Ore\ corsi\ individuali} = \sum_{i \in I, g \in G, o \in O} s_{i,g,o} + t_{i,g,o} && \\
 	& \textbf{Ore\ corso\ agonisti} = \sum_{i \in I, g \in G} 2 u_{i,g} && \\
-	& \textbf{Ore\ corso\ outdoor} = \sum_{i \in I} o_i \cdot durataCorsoOutdoor &&
+	& \textbf{Ore\ corso\ outdoor} = \sum_{i \in I} d_i \cdot durataCorsoOutdoor &&
 \end{align*}
 \textbf{s.t.}
 
@@ -53,7 +53,7 @@ dove i termini sono i seguenti:
 \end{itemize}
 \vspace*{-\baselineskip}
 \begin{flalign*}
-	& ( \sum_{g \in G, o \in O} s_{i,g,o} + t_{i,g,o} ) + ( \sum_{g \in G} 2 u_{i,g} ) + o_i \cdot durataCorsoOutdoor \leq maxOre_i & \forall i \in I &
+	& ( \sum_{g \in G, o \in O} s_{i,g,o} + t_{i,g,o} ) + ( \sum_{g \in G} 2 u_{i,g} ) + d_i \cdot durataCorsoOutdoor \leq maxOre_i & \forall i \in I &
 \end{flalign*}
 
 \begin{itemize}
@@ -72,7 +72,7 @@ dove i termini sono i seguenti:
 	& \sum_{g \in G} a_g \geq minAllenamentiAgonisti &
 \end{flalign*}
 \begin{flalign*}
-	& \textbf{Dominio: } b_{g,o}, l_{g,o} \in \Z_+,\ s_{i,g,o}, t_{i,g,o}, a_{g}, u_{i,g}, k, o_i \in \{ 0, 1 \}
+	& \textbf{Dominio: } b_{g,o}, l_{g,o} \in \Z_+,\ s_{i,g,o}, t_{i,g,o}, a_{g}, u_{i,g}, k, d_i \in \{ 0, 1 \}
 	& \forall i \in I, \forall g \in G, \forall o \in O &
 \end{flalign*}
 Si noti che non vengono fatte assunzioni sul numero di istruttori contemporanei per uno stesso costo, perché, non comportando nessun vantaggio la presenza di più istruttori in contemporanea, questo verrebbe limitato in tutti i casi a 1 dalla funzione obiettivo, nell'intento di minimizzare i costi degli istruttori per massimizzare il profitto.
