@@ -34,4 +34,6 @@ maximize FO:
 		+ (sum{i in I} o[i] * durataCorsoOutdoor)
 	);
 
-s.t.
+s.t. istruttoreBoulder{g in G, o in O}: sum(i in I) s[i,g,o] * M >= b[g,o];
+s.t. istruttoreLead{g in G, o in O}: sum(i in I) t[i,g,o] * M >= l[g,o];
+s.t. istruttoreAgonisti{g in G}: sum(i in I) u[i,g] >= a[g];
