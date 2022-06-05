@@ -32,20 +32,20 @@ dove i termini sono i seguenti:
 \end{flalign*}
 
 \begin{itemize}
-	\item Un istruttore può seguire un numero massimo di corsi contemporaneamente:
-\end{itemize}
-\vspace*{-\baselineskip}
-\begin{flalign*}
-	& b_{g,o} - \sum_{j \in I - i} s_{j,g,o} \cdot maxCorsiIstruttore \leq maxCorsiIstruttore & \forall i \in I, \forall g \in G, \forall o \in O & \\
-	& l_{g,o} - \sum_{j \in I - i} t_{j,g,o} \cdot maxCorsiIstruttore \leq maxCorsiIstruttore & \forall i \in I, \forall g \in G, \forall o \in O &
-\end{flalign*}
-
-\begin{itemize}
 	\item Un istruttore non può seguire contemporaneamente corsi di boulder e di lead:
 \end{itemize}
 \vspace*{-\baselineskip}
 \begin{flalign*}
 	& s_{i,g,o} + t_{i,g,o} \leq 1 & \forall i \in I, \forall g \in G, \forall o \in O &
+\end{flalign*}
+
+\begin{itemize}
+	\item Un istruttore può seguire un numero massimo di corsi contemporaneamente:
+\end{itemize}
+\vspace*{-\baselineskip}
+\begin{flalign*}
+	& \frac{ b_{g,o} }{ \sum_{i \in I} s_{i,g,o} } \leq maxCorsiIstruttore & \forall g \in G, \forall o \in O & \\
+	& \frac{ l_{g,o} }{ \sum_{i \in I} t_{i,g,o} } \leq maxCorsiIstruttore & \forall g \in G, \forall o \in O &
 \end{flalign*}
 
 \begin{itemize}
