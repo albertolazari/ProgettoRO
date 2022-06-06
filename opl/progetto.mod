@@ -36,16 +36,21 @@ maximize FO:
 
 s.t. istruttoreBoulder{g in G, o in O}: sum{i in I} b[i,g,o] * M >= boulder[g,o];
 s.t. istruttoreLead{g in G, o in O}: sum{i in I} l[i,g,o] * M >= lead[g,o];
+s.t. istruttoreAgonisti{g in G}: sum{i in I} a[i,g] >= t[g];
+
 s.t. boulderOppureLead{i in I, g in G, o in O}: (b[i,g,o] + l[i,g,o]) <= 1;
+
 s.t. maxCorsiBoulder{g in G, o in O}: (sum{i in I} b[i,g,o]) >= boulder[g,o] / maxCorsiIstruttore;
 s.t. maxCorsiLead{g in G, o in O}: (sum{i in I} l[i,g,o]) >= lead[g,o] / maxCorsiIstruttore;
-s.t. soloCorsoAgonisti{i in I, g in G}:
-    b[i,g,orarioCorsoAgonisti] + b[i,g,orarioCorsoAgonisti+1]
-    + l[i,g,orarioCorsoAgonisti] + l[i,g,orarioCorsoAgonisti+1]
-    <= (1 - a[i,g]) * M;
+
 s.t. vincoloMaxOre{i in I}:
     (sum{g in G, o in O} (b[i,g,o] + l[i,g,o]))
     + (sum {g in G} 2 * a[i,g])
     + d[i] * durataCorsoOutdoor <= maxOre[i];
+
+s.t. soloCorsoAgonisti{i in I, g in G}:
+    b[i,g,orarioCorsoAgonisti] + b[i,g,orarioCorsoAgonisti+1]
+    + l[i,g,orarioCorsoAgonisti] + l[i,g,orarioCorsoAgonisti+1]
+    <= (1 - a[i,g]) * M;
+
 s.t. vincoloMinAllenamentiAgonisti: sum{g in G} t[g] >= minAllenamentiAgonisti;
-s.t. istruttoreAgonisti{g in G}: sum{i in I} a[i,g] >= t[g];
