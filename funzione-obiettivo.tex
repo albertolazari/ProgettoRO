@@ -44,8 +44,8 @@ dove i termini sono i seguenti:
 \end{itemize}
 \vspace*{-\baselineskip}
 \begin{flalign*}
-	& \frac{ boulder_{g,o} }{ \sum_{i \in I} b_{i,g,o} } \leq maxCorsiIstruttore & \forall g \in G, \forall o \in O & \\
-	& \frac{ lead_{g,o} }{ \sum_{i \in I} l_{i,g,o} } \leq maxCorsiIstruttore & \forall g \in G, \forall o \in O &
+	& \sum_{i \in I} b_{i,g,o} \geq \frac{ boulder_{g,o} }{ maxCorsiIstruttore } & \forall g \in G, \forall o \in O & \\
+	& \sum_{i \in I} l_{i,g,o} \geq \frac{ lead_{g,o} }{ maxCorsiIstruttore } & \forall g \in G, \forall o \in O &
 \end{flalign*}
 
 \begin{itemize}
