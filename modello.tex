@@ -10,6 +10,8 @@
 	\item $maxCorsiIstruttore$: massimo numero di corsi individuali, di boulder o lead, che un istruttore può seguire contemporaneamente
 	\item $costoIstruttore$: costo orario di un istruttore
 	\item $maxOre_i$: massimo numero di ore di lavoro per l'istruttore $i \in I$
+	\item $boulder_{g,o}$ : corsi individuali di boulder svolti nel giorno $g \in G$ nell'orario $o \in O$
+	\item $lead_{g,o}$ : corsi individuali di lead svolti nel giorno $g \in G$ nell'orario $o \in O$
 	\item $guadagnoCorsoBoulder$: guadagno ricavato dallo svolgimento di un corso di boulder
 	\item $guadagnoCorsoLead$: guadagno ricavato dallo svolgimento di un corso di lead
 	\item $minAllenamentiAgonisti$: minimo numero di giorni in cui si tiene il corso agonisti
@@ -22,24 +24,22 @@
 
 \subsection{Variabili decisionali}
 \begin{itemize}
-	\item $b_{g,o}$ : corsi individuali di boulder svolti nel giorno $g \in G$ nell'orario $o \in O$
-	\item $l_{g,o}$ : corsi individuali di lead svolti nel giorno $g \in G$ nell'orario $o \in O$
-	\item $s_{i,g,o} =
+	\item $b_{i,g,o} =
 		\begin{cases}
 			1 & $se l'istruttore $i \in I$ segue dei corsi di boulder il giorno $g \in G \\ & $nell'orario $o \in O$$ \\
 			0 & $altrimenti$
 		\end{cases}$
-	\item $t_{i,g,o} =
+	\item $l_{i,g,o} =
 		\begin{cases}
 			1 & $se l'istruttore $i \in I$ segue dei corsi di lead il giorno $g \in G \\ & $nell'orario $o \in O$$ \\
 			0 & $altrimenti$
 		\end{cases}$
-	\item $a_g =
+	\item $t_g =
 		\begin{cases}
 			1 & $se nel giorno $g \in G$ si tiene il corso agonisti$ \\
 			0 & $altrimenti$
 		\end{cases}$
-	\item $u_{i,g} =
+	\item $a_{i,g} =
 		\begin{cases}
 			1 & $se l'istruttore $i \in I$ segue il corso degli agonisti il giorno $g \in G$$ \\
 			0 & $altrimenti$

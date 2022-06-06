@@ -5,9 +5,9 @@ La funzione obiettivo del modello può essere espressa in una forma generale com
 \end{align*}
 dove i termini sono i seguenti:
 \begin{flalign*}
-	& \textbf{Guadagno\ corsi\ boulder} = \sum_{g \in G, o \in O} b_{g,o} \cdot guadagnoCorsoBoulder && \\
-	& \textbf{Guadagno\ corsi\ lead} = \sum_{g \in G, o \in O} l_{g,o} \cdot guadagnoCorsoLead && \\
-	& \textbf{Guadagno\ corso\ agonisti} = \sum_{g \in G} a_g \cdot guadagnoCorsoAgonisti && \\
+	& \textbf{Guadagno\ corsi\ boulder} = \sum_{g \in G, o \in O} boulder_{g,o} \cdot guadagnoCorsoBoulder && \\
+	& \textbf{Guadagno\ corsi\ lead} = \sum_{g \in G, o \in O} lead_{g,o} \cdot guadagnoCorsoLead && \\
+	& \textbf{Guadagno\ corso\ agonisti} = \sum_{g \in G} t_g \cdot guadagnoCorsoAgonisti && \\
 	& \textbf{Guadagno\ corso\ outdoor} = k \cdot guadagnoCorsoOutdoor &&
 \end{flalign*}
 \begin{flalign*}
@@ -15,8 +15,8 @@ dove i termini sono i seguenti:
 	& + \textbf{Ore\ corso\ outdoor} ) &&
 \end{flalign*}
 \begin{align*}
-	& \textbf{Ore\ corsi\ individuali} = \sum_{i \in I, g \in G, o \in O} s_{i,g,o} + t_{i,g,o} && \\
-	& \textbf{Ore\ corso\ agonisti} = \sum_{i \in I, g \in G} 2 u_{i,g} && \\
+	& \textbf{Ore\ corsi\ individuali} = \sum_{i \in I, g \in G, o \in O} b_{i,g,o} + l_{i,g,o} && \\
+	& \textbf{Ore\ corso\ agonisti} = \sum_{i \in I, g \in G} 2 a_{i,g} && \\
 	& \textbf{Ore\ corso\ outdoor} = \sum_{i \in I} d_i \cdot durataCorsoOutdoor &&
 \end{align*}
 \textbf{s.t.}
@@ -26,9 +26,9 @@ dove i termini sono i seguenti:
 \end{itemize}
 \vspace*{-\baselineskip}
 \begin{flalign*}
-	& \sum_{i \in I} s_{i,g,o} \cdot M \geq b_{g,o} & \forall g \in G, \forall o \in O & \\
-	& \sum_{i \in I} t_{i,g,o} \cdot M \geq l_{g,o} & \forall g \in G, \forall o \in O & \\
-	& \sum_{i \in I} u_{i,g} \geq a_{g} & \forall g \in G &
+	& \sum_{i \in I} b_{i,g,o} \cdot M \geq boulder_{g,o} & \forall g \in G, \forall o \in O & \\
+	& \sum_{i \in I} l_{i,g,o} \cdot M \geq lead_{g,o} & \forall g \in G, \forall o \in O & \\
+	& \sum_{i \in I} a_{i,g} \geq t_{g} & \forall g \in G &
 \end{flalign*}
 
 \begin{itemize}
@@ -36,7 +36,7 @@ dove i termini sono i seguenti:
 \end{itemize}
 \vspace*{-\baselineskip}
 \begin{flalign*}
-	& s_{i,g,o} + t_{i,g,o} \leq 1 & \forall i \in I, \forall g \in G, \forall o \in O &
+	& b_{i,g,o} + l_{i,g,o} \leq 1 & \forall i \in I, \forall g \in G, \forall o \in O &
 \end{flalign*}
 
 \begin{itemize}
@@ -44,8 +44,8 @@ dove i termini sono i seguenti:
 \end{itemize}
 \vspace*{-\baselineskip}
 \begin{flalign*}
-	& \frac{ b_{g,o} }{ \sum_{i \in I} s_{i,g,o} } \leq maxCorsiIstruttore & \forall g \in G, \forall o \in O & \\
-	& \frac{ l_{g,o} }{ \sum_{i \in I} t_{i,g,o} } \leq maxCorsiIstruttore & \forall g \in G, \forall o \in O &
+	& \frac{ boulder_{g,o} }{ \sum_{i \in I} b_{i,g,o} } \leq maxCorsiIstruttore & \forall g \in G, \forall o \in O & \\
+	& \frac{ lead_{g,o} }{ \sum_{i \in I} l_{i,g,o} } \leq maxCorsiIstruttore & \forall g \in G, \forall o \in O &
 \end{flalign*}
 
 \begin{itemize}
@@ -53,7 +53,7 @@ dove i termini sono i seguenti:
 \end{itemize}
 \vspace*{-\baselineskip}
 \begin{flalign*}
-	& ( \sum_{g \in G, o \in O} s_{i,g,o} + t_{i,g,o} ) + ( \sum_{g \in G} 2 u_{i,g} ) + d_i \cdot durataCorsoOutdoor \leq maxOre_i & \forall i \in I &
+	& ( \sum_{g \in G, o \in O} b_{i,g,o} + l_{i,g,o} ) + ( \sum_{g \in G} 2 a_{i,g} ) + d_i \cdot durataCorsoOutdoor \leq maxOre_i & \forall i \in I &
 \end{flalign*}
 
 \begin{itemize}
@@ -61,7 +61,7 @@ dove i termini sono i seguenti:
 \end{itemize}
 \vspace*{-\baselineskip}
 \begin{flalign*}
-	& s_{i,g,o} + s_{i,g,o + 1} + t_{i,g,o} + t_{i,g,o + 1} \leq ( 1 - u_{i,g} ) \cdot M & o = orarioCorsoAgonisti, \forall i \in I, \forall g \in G &
+	& b_{i,g,o} + b_{i,g,o + 1} + l_{i,g,o} + l_{i,g,o + 1} \leq ( 1 - a_{i,g} ) \cdot M & o = orarioCorsoAgonisti, \forall i \in I, \forall g \in G &
 \end{flalign*}
 
 \begin{itemize}
@@ -69,10 +69,10 @@ dove i termini sono i seguenti:
 \end{itemize}
 \vspace*{-\baselineskip}
 \begin{flalign*}
-	& \sum_{g \in G} a_g \geq minAllenamentiAgonisti &
+	& \sum_{g \in G} t_g \geq minAllenamentiAgonisti &
 \end{flalign*}
 \begin{flalign*}
-	& \textbf{Dominio: } b_{g,o}, l_{g,o} \in \Z_+,\ s_{i,g,o}, t_{i,g,o}, a_{g}, u_{i,g}, k, d_i \in \{ 0, 1 \}
+	& \textbf{Dominio: } \ b_{i,g,o}, l_{i,g,o}, t_{g}, a_{i,g}, k, d_i \in \{ 0, 1 \}
 	& \forall i \in I, \forall g \in G, \forall o \in O &
 \end{flalign*}
 Si noti che non vengono fatte assunzioni sul numero di istruttori contemporanei per uno stesso costo, perché, non comportando nessun vantaggio la presenza di più istruttori in contemporanea, questo verrebbe limitato in tutti i casi a 1 dalla funzione obiettivo, nell'intento di minimizzare i costi degli istruttori per massimizzare il profitto.
