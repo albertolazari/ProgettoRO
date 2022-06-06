@@ -1,0 +1,35 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nf}{set}\PYG{+w}{ }\PYG{k+kt}{G}\PYG{+w}{ }\PYG{k+kt}{:=}\PYG{+w}{ }\PYG{n}{lun}\PYG{+w}{ }\PYG{n}{mar}\PYG{+w}{ }\PYG{n}{mer}\PYG{+w}{ }\PYG{n}{gio}\PYG{+w}{ }\PYG{n}{ven}\PYG{p}{;}
+\PYG{n+nf}{set}\PYG{+w}{ }\PYG{k+kt}{O}\PYG{+w}{ }\PYG{k+kt}{:=}\PYG{+w}{ }\PYG{l+m+mi}{16}\PYG{+w}{ }\PYG{l+m+mi}{17}\PYG{+w}{ }\PYG{l+m+mi}{18}\PYG{+w}{ }\PYG{l+m+mi}{19}\PYG{p}{;}
+\PYG{n+nf}{set}\PYG{+w}{ }\PYG{k+kt}{I}\PYG{+w}{ }\PYG{k+kt}{:=}\PYG{+w}{ }\PYG{k+kt}{Luca}\PYG{+w}{ }\PYG{k+kt}{Giovanni}\PYG{+w}{ }\PYG{k+kt}{Marco}\PYG{+w}{ }\PYG{k+kt}{Matteo}\PYG{p}{;}
+
+\PYG{n+nf}{param}\PYG{+w}{ }\PYG{n}{maxCorsiIstruttore}\PYG{+w}{ }\PYG{k+kt}{:=}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{p}{;}
+\PYG{n+nf}{param}\PYG{+w}{ }\PYG{n}{costoIstruttore}\PYG{+w}{ }\PYG{k+kt}{:=}\PYG{+w}{    }\PYG{l+m+mi}{5}\PYG{p}{;}
+\PYG{n+nf}{param}\PYG{+w}{ }\PYG{n}{maxOre}\PYG{+w}{ }\PYG{k+kt}{:=}
+\PYG{k+kt}{Luca}\PYG{+w}{            }\PYG{l+m+mi}{16}
+\PYG{k+kt}{Giovanni}\PYG{+w}{        }\PYG{l+m+mi}{13}
+\PYG{k+kt}{Marco}\PYG{+w}{           }\PYG{l+m+mi}{9}
+\PYG{k+kt}{Matteo}\PYG{+w}{          }\PYG{l+m+mi}{15}
+\PYG{p}{;}
+\PYG{n+nf}{param}\PYG{+w}{ }\PYG{n}{boulder}\PYG{k+kt}{:}\PYG{+w}{  }\PYG{l+m+mi}{16}\PYG{+w}{  }\PYG{l+m+mi}{17}\PYG{+w}{  }\PYG{l+m+mi}{18}\PYG{+w}{  }\PYG{l+m+mi}{19}\PYG{+w}{ }\PYG{k+kt}{:=}
+\PYG{n+nf}{lun}\PYG{+w}{             }\PYG{l+m+mi}{2}\PYG{+w}{   }\PYG{l+m+mi}{3}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{1}
+\PYG{n+nf}{mar}\PYG{+w}{             }\PYG{l+m+mi}{4}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{3}\PYG{+w}{   }\PYG{l+m+mi}{8}
+\PYG{n+nf}{mer}\PYG{+w}{             }\PYG{l+m+mi}{9}\PYG{+w}{   }\PYG{l+m+mi}{2}\PYG{+w}{   }\PYG{l+m+mi}{5}\PYG{+w}{   }\PYG{l+m+mi}{1}
+\PYG{n+nf}{gio}\PYG{+w}{             }\PYG{l+m+mi}{2}\PYG{+w}{   }\PYG{l+m+mi}{3}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{6}
+\PYG{n+nf}{ven}\PYG{+w}{             }\PYG{l+m+mi}{6}\PYG{+w}{   }\PYG{l+m+mi}{2}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{3}
+\PYG{p}{;}
+\PYG{n+nf}{param}\PYG{+w}{ }\PYG{n}{lead}\PYG{k+kt}{:}\PYG{+w}{     }\PYG{l+m+mi}{16}\PYG{+w}{  }\PYG{l+m+mi}{17}\PYG{+w}{  }\PYG{l+m+mi}{18}\PYG{+w}{  }\PYG{l+m+mi}{19}\PYG{+w}{ }\PYG{k+kt}{:=}
+\PYG{n+nf}{lun}\PYG{+w}{             }\PYG{l+m+mi}{3}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{2}\PYG{+w}{   }\PYG{l+m+mi}{1}
+\PYG{n+nf}{mar}\PYG{+w}{             }\PYG{l+m+mi}{2}\PYG{+w}{   }\PYG{l+m+mi}{7}\PYG{+w}{   }\PYG{l+m+mi}{2}\PYG{+w}{   }\PYG{l+m+mi}{1}
+\PYG{n+nf}{mer}\PYG{+w}{             }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{2}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{3}
+\PYG{n+nf}{gio}\PYG{+w}{             }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{2}\PYG{+w}{   }\PYG{l+m+mi}{4}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{ven}\PYG{+w}{             }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{3}\PYG{+w}{   }\PYG{l+m+mi}{6}\PYG{+w}{   }\PYG{l+m+mi}{2}
+\PYG{p}{;}
+\PYG{n+nf}{param}\PYG{+w}{ }\PYG{n}{guadagnoCorsoBoulder}\PYG{+w}{ }\PYG{k+kt}{:=}\PYG{+w}{   }\PYG{l+m+mi}{7}\PYG{p}{;}
+\PYG{n+nf}{param}\PYG{+w}{ }\PYG{n}{guadagnoCorsoLead}\PYG{+w}{ }\PYG{k+kt}{:=}\PYG{+w}{      }\PYG{l+m+mi}{8}\PYG{p}{;}
+\PYG{n+nf}{param}\PYG{+w}{ }\PYG{n}{minAllenamentiAgonisti}\PYG{+w}{ }\PYG{k+kt}{:=}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{;}
+\PYG{n+nf}{param}\PYG{+w}{ }\PYG{n}{orarioCorsoAgonisti}\PYG{+w}{ }\PYG{k+kt}{:=}\PYG{+w}{    }\PYG{l+m+mi}{16}\PYG{p}{;}
+\PYG{n+nf}{param}\PYG{+w}{ }\PYG{n}{guadagnoCorsoAgonisti}\PYG{+w}{ }\PYG{k+kt}{:=}\PYG{+w}{  }\PYG{l+m+mi}{11}\PYG{p}{;}
+\PYG{n+nf}{param}\PYG{+w}{ }\PYG{n}{durataCorsoOutdoor}\PYG{+w}{ }\PYG{k+kt}{:=}\PYG{+w}{     }\PYG{l+m+mi}{3}\PYG{p}{;}
+\PYG{n+nf}{param}\PYG{+w}{ }\PYG{n}{guadagnoCorsoOutdoor}\PYG{+w}{ }\PYG{k+kt}{:=}\PYG{+w}{   }\PYG{l+m+mi}{30}\PYG{p}{;}
+\end{Verbatim}

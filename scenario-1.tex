@@ -1,0 +1,8 @@
+Si voule modellare lo scenario di una palestra aperta dal lunedì al venerdì, dalle 16 alle 20. Ha quattro istruttori: Luca, Giovanni, Marco e Matteo, che possono seguire al massimo 3 corsi contemporaneamente e vengono pagati 5 euro per ogni ora di corso seguito. Per ogni corso individuale svolto si guadagnano 7 euro per i corsi di boulder, 8 per quelli di lead. Il corso agonisti si tiene tra le 16 e le 18, porta un guadagno di 11 euro ogni giorno in cui viene svolto e deve avvenire almeno 2 volte nella settimana. Il corso outdoor dura 3 ore e porta 30 euro di guadagno se svolto. \\
+Di seguito il file \texttt{.dat} in cui vengono inizializzati i valori di tutti i parametri del modello e che contiene anche le informazioni sulle ore di disponibilità degli isruttori e sugli orari dei corsi da tenere.
+
+\subsection{File .dat}
+\inputminted[bgcolor=bg, breaklines, fontsize=\small]{haskell}{opl/scenario-1.dat}
+
+\subsection{Output}
+L'esecuzione del file \texttt{.run} mostra che il guadagno massimo è di 546 euro. Gli istruttori riescono anche a svolgere un terzo giorno di allenamento con gli agonisti, ma non hanno abbastanza ore disponibili per poter sostenere il corso outdoor.

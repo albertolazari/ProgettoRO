@@ -1,0 +1,127 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{CPLEX}\PYG{+w}{ }\PYG{l+m+mf}{20.1}\PYG{o}{.}\PYG{l+m+mf}{0.0}\PYG{k+kt}{:}\PYG{+w}{ }\PYG{n}{optimal}\PYG{+w}{ }\PYG{n}{integer}\PYG{+w}{ }\PYG{n}{solution}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{objective}\PYG{+w}{ }\PYG{l+m+mi}{546}
+\PYG{l+m+mi}{100}\PYG{+w}{ }\PYG{k+kt}{MIP}\PYG{+w}{ }\PYG{n}{simplex}\PYG{+w}{ }\PYG{n}{iterations}
+\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{n}{branch}\PYG{o}{\PYGZhy{}}\PYG{n}{and}\PYG{o}{\PYGZhy{}}\PYG{n}{bound}\PYG{+w}{ }\PYG{n}{nodes}
+\PYG{o}{==================================}
+\PYG{o}{===}\PYG{+w}{     }\PYG{k+kt}{FUNZIONE}\PYG{+w}{ }\PYG{k+kt}{OBIETTIVO}\PYG{+w}{     }\PYG{o}{===}
+\PYG{o}{==================================}
+\PYG{k+kt}{FO}\PYG{+w}{ }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{l+m+mi}{546}
+
+\PYG{o}{=====================================}
+\PYG{o}{===}\PYG{+w}{     }\PYG{k+kt}{DISPONIBILITÀ}\PYG{+w}{ }\PYG{k+kt}{BOULDER}\PYG{+w}{     }\PYG{o}{===}
+\PYG{o}{=====================================}
+\PYG{n+nf}{b}\PYG{+w}{ }\PYG{p}{[}\PYG{k+kt}{Giovanni}\PYG{p}{,}\PYG{o}{*}\PYG{p}{,}\PYG{o}{*}\PYG{p}{]}
+\PYG{k+kt}{:}\PYG{+w}{    }\PYG{l+m+mi}{16}\PYG{+w}{  }\PYG{l+m+mi}{17}\PYG{+w}{  }\PYG{l+m+mi}{18}\PYG{+w}{  }\PYG{l+m+mi}{19}\PYG{+w}{    }\PYG{k+kt}{:=}
+\PYG{n+nf}{gio}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}
+\PYG{n+nf}{lun}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{mar}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}
+\PYG{n+nf}{mer}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{ven}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}
+
+\PYG{+w}{ }\PYG{p}{[}\PYG{k+kt}{Luca}\PYG{p}{,}\PYG{o}{*}\PYG{p}{,}\PYG{o}{*}\PYG{p}{]}
+\PYG{k+kt}{:}\PYG{+w}{    }\PYG{l+m+mi}{16}\PYG{+w}{  }\PYG{l+m+mi}{17}\PYG{+w}{  }\PYG{l+m+mi}{18}\PYG{+w}{  }\PYG{l+m+mi}{19}\PYG{+w}{    }\PYG{k+kt}{:=}
+\PYG{n+nf}{gio}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{lun}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{mar}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}
+\PYG{n+nf}{mer}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{ven}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}
+
+\PYG{+w}{ }\PYG{p}{[}\PYG{k+kt}{Marco}\PYG{p}{,}\PYG{o}{*}\PYG{p}{,}\PYG{o}{*}\PYG{p}{]}
+\PYG{k+kt}{:}\PYG{+w}{    }\PYG{l+m+mi}{16}\PYG{+w}{  }\PYG{l+m+mi}{17}\PYG{+w}{  }\PYG{l+m+mi}{18}\PYG{+w}{  }\PYG{l+m+mi}{19}\PYG{+w}{    }\PYG{k+kt}{:=}
+\PYG{n+nf}{gio}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{lun}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{mar}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{mer}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}
+\PYG{n+nf}{ven}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}
+
+\PYG{+w}{ }\PYG{p}{[}\PYG{k+kt}{Matteo}\PYG{p}{,}\PYG{o}{*}\PYG{p}{,}\PYG{o}{*}\PYG{p}{]}
+\PYG{k+kt}{:}\PYG{+w}{    }\PYG{l+m+mi}{16}\PYG{+w}{  }\PYG{l+m+mi}{17}\PYG{+w}{  }\PYG{l+m+mi}{18}\PYG{+w}{  }\PYG{l+m+mi}{19}\PYG{+w}{    }\PYG{k+kt}{:=}
+\PYG{n+nf}{gio}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}
+\PYG{n+nf}{lun}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{1}
+\PYG{n+nf}{mar}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{1}
+\PYG{n+nf}{mer}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{ven}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{p}{;}
+
+\PYG{o}{==================================}
+\PYG{o}{===}\PYG{+w}{     }\PYG{k+kt}{DISPONIBILITÀ}\PYG{+w}{ }\PYG{k+kt}{LEAD}\PYG{+w}{     }\PYG{o}{===}
+\PYG{o}{==================================}
+\PYG{n+nf}{l}\PYG{+w}{ }\PYG{p}{[}\PYG{k+kt}{Giovanni}\PYG{p}{,}\PYG{o}{*}\PYG{p}{,}\PYG{o}{*}\PYG{p}{]}
+\PYG{k+kt}{:}\PYG{+w}{    }\PYG{l+m+mi}{16}\PYG{+w}{  }\PYG{l+m+mi}{17}\PYG{+w}{  }\PYG{l+m+mi}{18}\PYG{+w}{  }\PYG{l+m+mi}{19}\PYG{+w}{    }\PYG{k+kt}{:=}
+\PYG{n+nf}{gio}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{lun}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{mar}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{mer}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}
+\PYG{n+nf}{ven}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}
+
+\PYG{+w}{ }\PYG{p}{[}\PYG{k+kt}{Luca}\PYG{p}{,}\PYG{o}{*}\PYG{p}{,}\PYG{o}{*}\PYG{p}{]}
+\PYG{k+kt}{:}\PYG{+w}{    }\PYG{l+m+mi}{16}\PYG{+w}{  }\PYG{l+m+mi}{17}\PYG{+w}{  }\PYG{l+m+mi}{18}\PYG{+w}{  }\PYG{l+m+mi}{19}\PYG{+w}{    }\PYG{k+kt}{:=}
+\PYG{n+nf}{gio}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{lun}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{1}
+\PYG{n+nf}{mar}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{mer}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{ven}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}
+
+\PYG{+w}{ }\PYG{p}{[}\PYG{k+kt}{Marco}\PYG{p}{,}\PYG{o}{*}\PYG{p}{,}\PYG{o}{*}\PYG{p}{]}
+\PYG{k+kt}{:}\PYG{+w}{    }\PYG{l+m+mi}{16}\PYG{+w}{  }\PYG{l+m+mi}{17}\PYG{+w}{  }\PYG{l+m+mi}{18}\PYG{+w}{  }\PYG{l+m+mi}{19}\PYG{+w}{    }\PYG{k+kt}{:=}
+\PYG{n+nf}{gio}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{lun}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{mar}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}
+\PYG{n+nf}{mer}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{ven}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}
+
+\PYG{+w}{ }\PYG{p}{[}\PYG{k+kt}{Matteo}\PYG{p}{,}\PYG{o}{*}\PYG{p}{,}\PYG{o}{*}\PYG{p}{]}
+\PYG{k+kt}{:}\PYG{+w}{    }\PYG{l+m+mi}{16}\PYG{+w}{  }\PYG{l+m+mi}{17}\PYG{+w}{  }\PYG{l+m+mi}{18}\PYG{+w}{  }\PYG{l+m+mi}{19}\PYG{+w}{    }\PYG{k+kt}{:=}
+\PYG{n+nf}{gio}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{lun}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{mar}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{mer}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{n+nf}{ven}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{l+m+mi}{1}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{p}{;}
+
+\PYG{o}{==============================}
+\PYG{o}{===}\PYG{+w}{     }\PYG{k+kt}{CORSO}\PYG{+w}{ }\PYG{k+kt}{AGONISTI}\PYG{+w}{     }\PYG{o}{===}
+\PYG{o}{==============================}
+\PYG{n+nf}{t}\PYG{+w}{ }\PYG{p}{[}\PYG{o}{*}\PYG{p}{]}\PYG{+w}{ }\PYG{k+kt}{:=}
+\PYG{n+nf}{gio}\PYG{+w}{  }\PYG{l+m+mi}{1}
+\PYG{n+nf}{lun}\PYG{+w}{  }\PYG{l+m+mi}{1}
+\PYG{n+nf}{mar}\PYG{+w}{  }\PYG{l+m+mi}{0}
+\PYG{n+nf}{mer}\PYG{+w}{  }\PYG{l+m+mi}{0}
+\PYG{n+nf}{ven}\PYG{+w}{  }\PYG{l+m+mi}{1}
+\PYG{p}{;}
+
+\PYG{n+nf}{a}\PYG{+w}{ }\PYG{k+kt}{:=}
+\PYG{k+kt}{Giovanni}\PYG{+w}{ }\PYG{n}{gio}\PYG{+w}{   }\PYG{l+m+mi}{1}
+\PYG{k+kt}{Giovanni}\PYG{+w}{ }\PYG{n}{lun}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{k+kt}{Giovanni}\PYG{+w}{ }\PYG{n}{mar}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{k+kt}{Giovanni}\PYG{+w}{ }\PYG{n}{mer}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{k+kt}{Giovanni}\PYG{+w}{ }\PYG{n}{ven}\PYG{+w}{   }\PYG{l+m+mi}{1}
+\PYG{k+kt}{Luca}\PYG{+w}{     }\PYG{n}{gio}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{k+kt}{Luca}\PYG{+w}{     }\PYG{n}{lun}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{k+kt}{Luca}\PYG{+w}{     }\PYG{n}{mar}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{k+kt}{Luca}\PYG{+w}{     }\PYG{n}{mer}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{k+kt}{Luca}\PYG{+w}{     }\PYG{n}{ven}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{k+kt}{Marco}\PYG{+w}{    }\PYG{n}{gio}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{k+kt}{Marco}\PYG{+w}{    }\PYG{n}{lun}\PYG{+w}{   }\PYG{l+m+mi}{1}
+\PYG{k+kt}{Marco}\PYG{+w}{    }\PYG{n}{mar}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{k+kt}{Marco}\PYG{+w}{    }\PYG{n}{mer}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{k+kt}{Marco}\PYG{+w}{    }\PYG{n}{ven}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{k+kt}{Matteo}\PYG{+w}{   }\PYG{n}{gio}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{k+kt}{Matteo}\PYG{+w}{   }\PYG{n}{lun}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{k+kt}{Matteo}\PYG{+w}{   }\PYG{n}{mar}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{k+kt}{Matteo}\PYG{+w}{   }\PYG{n}{mer}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{k+kt}{Matteo}\PYG{+w}{   }\PYG{n}{ven}\PYG{+w}{   }\PYG{l+m+mi}{0}
+\PYG{p}{;}
+
+\PYG{o}{=============================}
+\PYG{o}{===}\PYG{+w}{     }\PYG{k+kt}{CORSO}\PYG{+w}{ }\PYG{k+kt}{OUTDOOR}\PYG{+w}{     }\PYG{o}{===}
+\PYG{o}{=============================}
+\PYG{n+nf}{k}\PYG{+w}{ }\PYG{o+ow}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}
+
+\PYG{n+nf}{d}\PYG{+w}{ }\PYG{p}{[}\PYG{o}{*}\PYG{p}{]}\PYG{+w}{ }\PYG{k+kt}{:=}
+\PYG{k+kt}{Giovanni}\PYG{+w}{  }\PYG{l+m+mi}{0}
+\PYG{+w}{    }\PYG{k+kt}{Luca}\PYG{+w}{  }\PYG{l+m+mi}{0}
+\PYG{+w}{   }\PYG{k+kt}{Marco}\PYG{+w}{  }\PYG{l+m+mi}{0}
+\PYG{+w}{  }\PYG{k+kt}{Matteo}\PYG{+w}{  }\PYG{l+m+mi}{0}
+\PYG{p}{;}
+\end{Verbatim}
