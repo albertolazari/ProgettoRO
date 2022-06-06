@@ -1,6 +1,6 @@
 set G := lun mar mer gio ven;
 set O := 16 17 18 19;
-set I := Luca, Giovanni, Marco, Matteo;
+set I := Luca Giovanni Marco Matteo;
 
 param maxCorsiIstruttore := 3;
 param costoIstruttore := 5;
@@ -8,17 +8,20 @@ param maxOre :=
     Luca        13
     Giovanni    15
     Marco       10
-    Matteo      18;
-param boulder:  lun mar mer gio ven :=
-    16          2   3   1   1   6
-    17          4   0   3   8   2
-    18          9   2   5   1   0
-    19          2   3   1   6   3;
-param lead:     lun mar mer gio ven :=
-    16          3   1   2   1   0
-    17          2   7   2   1   3
-    18          0   2   1   3   6
-    19          1   2   4   0   2;
+    Matteo      18
+;
+param boulder (tr): lun mar mer gio ven :=
+    16              2   3   1   1   6
+    17              4   0   3   8   2
+    18              9   2   5   1   0
+    19              2   3   1   6   3
+;
+param lead (tr):    lun mar mer gio ven :=
+    16              3   1   2   1   0
+    17              2   7   2   1   3
+    18              0   2   1   3   6
+    19              1   2   4   0   2
+;
 param guadagnoCorsoBoulder := 7;
 param guadagnoCorsoLead := 8;
 param minAllenamentiAgonisti := 2;
