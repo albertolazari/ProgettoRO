@@ -5,10 +5,10 @@ set I := Luca Giovanni Marco Matteo;
 param maxCorsiIstruttore := 3;
 param costoIstruttore := 5;
 param maxOre :=
-    Luca        13
-    Giovanni    15
-    Marco       10
-    Matteo      18
+    Luca        16
+    Giovanni    13
+    Marco       9
+    Matteo      15
 ;
 param boulder (tr): lun mar mer gio ven :=
     16              2   3   1   1   6
@@ -26,6 +26,6 @@ param guadagnoCorsoBoulder := 7;
 param guadagnoCorsoLead := 8;
 param minAllenamentiAgonisti := 2;
 param orarioCorsoAgonisti := 16;
-param guadagnoCorsoAgonisti := 10;
+param guadagnoCorsoAgonisti := 11;
 param durataCorsoOutdoor := 3;
 param guadagnoCorsoOutdoor := 30;

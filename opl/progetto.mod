@@ -37,6 +37,7 @@ maximize FO:
 s.t. istruttoreBoulder{g in G, o in O}: sum{i in I} b[i,g,o] * M >= boulder[g,o];
 s.t. istruttoreLead{g in G, o in O}: sum{i in I} l[i,g,o] * M >= lead[g,o];
 s.t. istruttoreAgonisti{g in G}: sum{i in I} a[i,g] >= t[g];
+s.t. istruttoreOutdoor: sum{i in I} d[i] >= k;
 
 s.t. boulderOppureLead{i in I, g in G, o in O}: (b[i,g,o] + l[i,g,o]) <= 1;
 

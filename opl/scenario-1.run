@@ -3,3 +3,11 @@ model progetto.mod;
 data scenario-1.dat;
 option solver cplex;
 solve;
+
+display FO;
+display b;
+display l;
+display t;
+display a;
+display k;
+display d;
