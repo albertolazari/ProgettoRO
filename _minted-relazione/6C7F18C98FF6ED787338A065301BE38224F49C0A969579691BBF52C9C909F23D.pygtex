@@ -1,0 +1,59 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{err}{set}\PYG{+w}{ }\PYG{err}{G;}
+\PYG{err}{set}\PYG{+w}{ }\PYG{err}{O;}
+\PYG{err}{set}\PYG{+w}{ }\PYG{err}{I;}
+
+\PYG{err}{param}\PYG{+w}{ }\PYG{err}{maxCorsiIstruttore;}
+\PYG{err}{param}\PYG{+w}{ }\PYG{err}{costoIstruttore;}
+\PYG{err}{param}\PYG{+w}{ }\PYG{err}{maxOre\PYGZob{}I\PYGZcb{};}
+\PYG{err}{param}\PYG{+w}{ }\PYG{err}{boulder\PYGZob{}G,}\PYG{+w}{ }\PYG{err}{O\PYGZcb{};}
+\PYG{err}{param}\PYG{+w}{ }\PYG{err}{lead\PYGZob{}G,}\PYG{+w}{ }\PYG{err}{O\PYGZcb{};}
+\PYG{err}{param}\PYG{+w}{ }\PYG{err}{guadagnoCorsoBoulder;}
+\PYG{err}{param}\PYG{+w}{ }\PYG{err}{guadagnoCorsoLead;}
+\PYG{err}{param}\PYG{+w}{ }\PYG{err}{minAllenamentiAgonisti;}
+\PYG{err}{param}\PYG{+w}{ }\PYG{err}{orarioCorsoAgonisti;}
+\PYG{err}{param}\PYG{+w}{ }\PYG{err}{guadagnoCorsoAgonisti;}
+\PYG{err}{param}\PYG{+w}{ }\PYG{err}{durataCorsoOutdoor;}
+\PYG{err}{param}\PYG{+w}{ }\PYG{err}{guadagnoCorsoOutdoor;}
+\PYG{n+nf}{param M }\PYG{o}{:}= 9999999;
+
+\PYG{err}{var}\PYG{+w}{ }\PYG{err}{b\PYGZob{}I,}\PYG{+w}{ }\PYG{err}{G,}\PYG{+w}{ }\PYG{err}{O\PYGZcb{}}\PYG{+w}{ }\PYG{err}{binary;}
+\PYG{err}{var}\PYG{+w}{ }\PYG{err}{l\PYGZob{}I,}\PYG{+w}{ }\PYG{err}{G,}\PYG{+w}{ }\PYG{err}{O\PYGZcb{}}\PYG{+w}{ }\PYG{err}{binary;}
+\PYG{err}{var}\PYG{+w}{ }\PYG{err}{t\PYGZob{}G\PYGZcb{}}\PYG{+w}{ }\PYG{err}{binary;}
+\PYG{err}{var}\PYG{+w}{ }\PYG{err}{a\PYGZob{}I,}\PYG{+w}{ }\PYG{err}{G\PYGZcb{}}\PYG{+w}{ }\PYG{err}{binary;}
+\PYG{err}{var}\PYG{+w}{ }\PYG{err}{k}\PYG{+w}{ }\PYG{err}{binary;}
+\PYG{err}{var}\PYG{+w}{ }\PYG{err}{d\PYGZob{}I\PYGZcb{}}\PYG{+w}{ }\PYG{err}{binary;}
+
+\PYG{n+nf}{maximize FO}\PYG{o}{:}
+    \PYG{o}{(}sum\PYG{o}{\PYGZob{}}g \PYG{k}{in} G, o \PYG{k}{in} O\PYG{o}{\PYGZcb{}} boulder\PYG{o}{[}g,o\PYG{o}{]} * guadagnoCorsoBoulder\PYG{o}{)}
+    + \PYG{o}{(}sum\PYG{o}{\PYGZob{}}g \PYG{k}{in} G, o \PYG{k}{in} O\PYG{o}{\PYGZcb{}} lead\PYG{o}{[}g,o\PYG{o}{]} * guadagnoCorsoLead\PYG{o}{)}
+    + \PYG{o}{(}sum\PYG{o}{\PYGZob{}}g \PYG{k}{in} G\PYG{o}{\PYGZcb{}} t\PYG{o}{[}g\PYG{o}{]} * guadagnoCorsoAgonisti\PYG{o}{)}
+    + k * guadagnoCorsoOutdoor
+    \PYGZhy{} costoIstruttore * \PYG{o}{(}
+        \PYG{o}{(}sum\PYG{o}{\PYGZob{}}i \PYG{k}{in} I, g \PYG{k}{in} G, o \PYG{k}{in} O\PYG{o}{\PYGZcb{}} \PYG{o}{(}b\PYG{o}{[}i,g,o\PYG{o}{]} + l\PYG{o}{[}i,g,o\PYG{o}{]))}
+        + \PYG{o}{(}sum\PYG{o}{\PYGZob{}}i \PYG{k}{in} I, g \PYG{k}{in} G\PYG{o}{\PYGZcb{}} \PYG{l+m}{2} * a\PYG{o}{[}i,g\PYG{o}{])}
+        + \PYG{o}{(}sum\PYG{o}{\PYGZob{}}i \PYG{k}{in} I\PYG{o}{\PYGZcb{}} d\PYG{o}{[}i\PYG{o}{]} * durataCorsoOutdoor\PYG{o}{)}
+    \PYG{o}{)}\PYG{p}{;}
+
+\PYG{n+nf}{s.t. istruttoreBoulder\PYGZob{}g in G, o in O\PYGZcb{}}\PYG{o}{:} \PYG{n}{sum}\PYGZob{}\PYG{n}{i} \PYG{n}{in} \PYG{n}{I}\PYGZcb{} \PYG{n}{b}[\PYG{n}{i}\PYG{p}{,}\PYG{n}{g}\PYG{p}{,}\PYG{n}{o}] * \PYG{n}{M} \PYGZgt{}= \PYG{n}{boulder}[\PYG{n}{g}\PYG{p}{,}\PYG{n}{o}];
+\PYG{n+nf}{s.t. istruttoreLead\PYGZob{}g in G, o in O\PYGZcb{}}\PYG{o}{:} \PYG{n}{sum}\PYGZob{}\PYG{n}{i} \PYG{n}{in} \PYG{n}{I}\PYGZcb{} \PYG{n}{l}[\PYG{n}{i}\PYG{p}{,}\PYG{n}{g}\PYG{p}{,}\PYG{n}{o}] * \PYG{n}{M} \PYGZgt{}= \PYG{n}{lead}[\PYG{n}{g}\PYG{p}{,}\PYG{n}{o}];
+\PYG{n+nf}{s.t. istruttoreAgonisti\PYGZob{}g in G\PYGZcb{}}\PYG{o}{:} \PYG{n}{sum}\PYGZob{}\PYG{n}{i} \PYG{n}{in} \PYG{n}{I}\PYGZcb{} \PYG{n}{a}[\PYG{n}{i}\PYG{p}{,}\PYG{n}{g}] \PYGZgt{}= \PYG{n}{t}[\PYG{n}{g}];
+\PYG{n+nf}{s.t. istruttoreOutdoor}\PYG{o}{:} \PYG{n}{sum}\PYGZob{}\PYG{n}{i} \PYG{n}{in} \PYG{n}{I}\PYGZcb{} \PYG{n}{d}[\PYG{n}{i}] \PYGZgt{}= \PYG{n}{k};
+
+\PYG{n+nf}{s.t. boulderOppureLead\PYGZob{}i in I, g in G, o in O\PYGZcb{}}\PYG{o}{:} (\PYG{n}{b}[\PYG{n}{i}\PYG{p}{,}\PYG{n}{g}\PYG{p}{,}\PYG{n}{o}] + \PYG{n}{l}[\PYG{n}{i}\PYG{p}{,}\PYG{n}{g}\PYG{p}{,}\PYG{n}{o}]) \PYGZlt{}= 1;
+
+\PYG{n+nf}{s.t. maxCorsiBoulder\PYGZob{}g in G, o in O\PYGZcb{}}\PYG{o}{:} (\PYG{n}{sum}\PYGZob{}\PYG{n}{i} \PYG{n}{in} \PYG{n}{I}\PYGZcb{} \PYG{n}{b}[\PYG{n}{i}\PYG{p}{,}\PYG{n}{g}\PYG{p}{,}\PYG{n}{o}]) \PYGZgt{}= \PYG{n}{boulder}[\PYG{n}{g}\PYG{p}{,}\PYG{n}{o}] / \PYG{n}{maxCorsiIstruttore};
+\PYG{n+nf}{s.t. maxCorsiLead\PYGZob{}g in G, o in O\PYGZcb{}}\PYG{o}{:} (\PYG{n}{sum}\PYGZob{}\PYG{n}{i} \PYG{n}{in} \PYG{n}{I}\PYGZcb{} \PYG{n}{l}[\PYG{n}{i}\PYG{p}{,}\PYG{n}{g}\PYG{p}{,}\PYG{n}{o}]) \PYGZgt{}= \PYG{n}{lead}[\PYG{n}{g}\PYG{p}{,}\PYG{n}{o}] / \PYG{n}{maxCorsiIstruttore};
+
+\PYG{n+nf}{s.t. vincoloMaxOre\PYGZob{}i in I\PYGZcb{}}\PYG{o}{:}
+    \PYG{o}{(}sum\PYG{o}{\PYGZob{}}g \PYG{k}{in} G, o \PYG{k}{in} O\PYG{o}{\PYGZcb{}} \PYG{o}{(}b\PYG{o}{[}i,g,o\PYG{o}{]} + l\PYG{o}{[}i,g,o\PYG{o}{]))}
+    + \PYG{o}{(}sum \PYG{o}{\PYGZob{}}g \PYG{k}{in} G\PYG{o}{\PYGZcb{}} \PYG{l+m}{2} * a\PYG{o}{[}i,g\PYG{o}{])}
+    + d\PYG{o}{[}i\PYG{o}{]} * durataCorsoOutdoor \PYGZlt{}\PYG{o}{=} maxOre\PYG{o}{[}i\PYG{o}{]}\PYG{p}{;}
+
+\PYG{n+nf}{s.t. soloCorsoAgonisti\PYGZob{}i in I, g in G\PYGZcb{}}\PYG{o}{:}
+    b\PYG{o}{[}i,g,orarioCorsoAgonisti\PYG{o}{]} + b\PYG{o}{[}i,g,orarioCorsoAgonisti+1\PYG{o}{]}
+    + l\PYG{o}{[}i,g,orarioCorsoAgonisti\PYG{o}{]} + l\PYG{o}{[}i,g,orarioCorsoAgonisti+1\PYG{o}{]}
+    \PYGZlt{}\PYG{o}{=} \PYG{o}{(}\PYG{l+m}{1} \PYGZhy{} a\PYG{o}{[}i,g\PYG{o}{])} * M\PYG{p}{;}
+
+\PYG{n+nf}{s.t. vincoloMinAllenamentiAgonisti}\PYG{o}{:} \PYG{n}{sum}\PYGZob{}\PYG{n}{g} \PYG{n}{in} \PYG{n}{G}\PYGZcb{} \PYG{n}{t}[\PYG{n}{g}] \PYGZgt{}= \PYG{n}{minAllenamentiAgonisti};
+\end{Verbatim}

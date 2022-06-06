@@ -1,0 +1,59 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{set}\PYG{+w}{ }\PYG{n}{G}\PYG{p}{;}
+\PYG{g+go}{set O;}
+\PYG{g+go}{set I;}
+
+\PYG{g+go}{param maxCorsiIstruttore;}
+\PYG{g+go}{param costoIstruttore;}
+\PYG{g+go}{param maxOre\PYGZob{}I\PYGZcb{};}
+\PYG{g+go}{param boulder\PYGZob{}G, O\PYGZcb{};}
+\PYG{g+go}{param lead\PYGZob{}G, O\PYGZcb{};}
+\PYG{g+go}{param guadagnoCorsoBoulder;}
+\PYG{g+go}{param guadagnoCorsoLead;}
+\PYG{g+go}{param minAllenamentiAgonisti;}
+\PYG{g+go}{param orarioCorsoAgonisti;}
+\PYG{g+go}{param guadagnoCorsoAgonisti;}
+\PYG{g+go}{param durataCorsoOutdoor;}
+\PYG{g+go}{param guadagnoCorsoOutdoor;}
+\PYG{g+go}{param M := 9999999;}
+
+\PYG{g+go}{var b\PYGZob{}I, G, O\PYGZcb{} binary;}
+\PYG{g+go}{var l\PYGZob{}I, G, O\PYGZcb{} binary;}
+\PYG{g+go}{var t\PYGZob{}G\PYGZcb{} binary;}
+\PYG{g+go}{var a\PYGZob{}I, G\PYGZcb{} binary;}
+\PYG{g+go}{var k binary;}
+\PYG{g+go}{var d\PYGZob{}I\PYGZcb{} binary;}
+
+\PYG{g+go}{maximize FO:}
+\PYG{g+go}{    (sum\PYGZob{}g in G, o in O\PYGZcb{} boulder[g,o] * guadagnoCorsoBoulder)}
+\PYG{g+go}{    + (sum\PYGZob{}g in G, o in O\PYGZcb{} lead[g,o] * guadagnoCorsoLead)}
+\PYG{g+go}{    + (sum\PYGZob{}g in G\PYGZcb{} t[g] * guadagnoCorsoAgonisti)}
+\PYG{g+go}{    + k * guadagnoCorsoOutdoor}
+\PYG{g+go}{    \PYGZhy{} costoIstruttore * (}
+\PYG{g+go}{        (sum\PYGZob{}i in I, g in G, o in O\PYGZcb{} (b[i,g,o] + l[i,g,o]))}
+\PYG{g+go}{        + (sum\PYGZob{}i in I, g in G\PYGZcb{} 2 * a[i,g])}
+\PYG{g+go}{        + (sum\PYGZob{}i in I\PYGZcb{} d[i] * durataCorsoOutdoor)}
+\PYG{g+go}{    );}
+
+\PYG{g+go}{s.t. istruttoreBoulder\PYGZob{}g in G, o in O\PYGZcb{}: sum\PYGZob{}i in I\PYGZcb{} b[i,g,o] * M \PYGZgt{}= boulder[g,o];}
+\PYG{g+go}{s.t. istruttoreLead\PYGZob{}g in G, o in O\PYGZcb{}: sum\PYGZob{}i in I\PYGZcb{} l[i,g,o] * M \PYGZgt{}= lead[g,o];}
+\PYG{g+go}{s.t. istruttoreAgonisti\PYGZob{}g in G\PYGZcb{}: sum\PYGZob{}i in I\PYGZcb{} a[i,g] \PYGZgt{}= t[g];}
+\PYG{g+go}{s.t. istruttoreOutdoor: sum\PYGZob{}i in I\PYGZcb{} d[i] \PYGZgt{}= k;}
+
+\PYG{g+go}{s.t. boulderOppureLead\PYGZob{}i in I, g in G, o in O\PYGZcb{}: (b[i,g,o] + l[i,g,o]) \PYGZlt{}= 1;}
+
+\PYG{g+go}{s.t. maxCorsiBoulder\PYGZob{}g in G, o in O\PYGZcb{}: (sum\PYGZob{}i in I\PYGZcb{} b[i,g,o]) \PYGZgt{}= boulder[g,o] / maxCorsiIstruttore;}
+\PYG{g+go}{s.t. maxCorsiLead\PYGZob{}g in G, o in O\PYGZcb{}: (sum\PYGZob{}i in I\PYGZcb{} l[i,g,o]) \PYGZgt{}= lead[g,o] / maxCorsiIstruttore;}
+
+\PYG{g+go}{s.t. vincoloMaxOre\PYGZob{}i in I\PYGZcb{}:}
+\PYG{g+go}{    (sum\PYGZob{}g in G, o in O\PYGZcb{} (b[i,g,o] + l[i,g,o]))}
+\PYG{g+go}{    + (sum \PYGZob{}g in G\PYGZcb{} 2 * a[i,g])}
+\PYG{g+go}{    + d[i] * durataCorsoOutdoor \PYGZlt{}= maxOre[i];}
+
+\PYG{g+go}{s.t. soloCorsoAgonisti\PYGZob{}i in I, g in G\PYGZcb{}:}
+\PYG{g+go}{    b[i,g,orarioCorsoAgonisti] + b[i,g,orarioCorsoAgonisti+1]}
+\PYG{g+go}{    + l[i,g,orarioCorsoAgonisti] + l[i,g,orarioCorsoAgonisti+1]}
+\PYG{g+go}{    \PYGZlt{}= (1 \PYGZhy{} a[i,g]) * M;}
+
+\PYG{g+go}{s.t. vincoloMinAllenamentiAgonisti: sum\PYGZob{}g in G\PYGZcb{} t[g] \PYGZgt{}= minAllenamentiAgonisti;}
+\end{Verbatim}
