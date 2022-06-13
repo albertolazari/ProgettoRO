@@ -1,0 +1,32 @@
+reset;
+model progetto.mod;
+data scenario-1.dat;
+option solver cplex;
+solve;
+
+print '==================================';
+print '===     FUNZIONE OBIETTIVO     ===';
+print '==================================';
+display FO;
+
+print '=====================================';
+print '===     DISPONIBILITÀ BOULDER     ===';
+print '=====================================';
+display b;
+
+print '==================================';
+print '===     DISPONIBILITÀ LEAD     ===';
+print '==================================';
+display l;
+
+print '==============================';
+print '===     CORSO AGONISTI     ===';
+print '==============================';
+display t;
+display a;
+
+print '=============================';
+print '===     CORSO OUTDOOR     ===';
+print '=============================';
+display k;
+display d;
