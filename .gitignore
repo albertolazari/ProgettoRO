@@ -1,4 +1,5 @@
 *.pdf
 *.xdv
 *.synctex*
+_minted-*
 
