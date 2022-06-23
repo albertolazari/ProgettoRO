@@ -1,9 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{c+ch}{\PYGZsh{}!/usr/bin/env python2}
-
-    \PYG{k}{def} \PYG{n+nf}{example\PYGZus{}function}\PYG{p}{():}
-        \PYG{k}{return} \PYG{l+s+s2}{\PYGZdq{}hello world\PYGZdq{}}
-
-    \PYG{n}{a} \PYG{o}{=} \PYG{l+m+mi}{5}
-    \PYG{n}{b} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}I am python code\PYGZdq{}}
-\end{Verbatim}
